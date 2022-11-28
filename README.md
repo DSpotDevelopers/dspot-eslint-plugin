@@ -14,6 +14,9 @@ Next, install `@dspot/eslint-plugin`:
 
 ```sh
 npm install @dspot/eslint-plugin@https://github.com/DSpotDevelopers/dspot-eslint-plugin --save-dev
+
+//If using yarn
+yarn add -D @dspot/eslint-plugin@https://github.com/DSpotDevelopers/dspot-eslint-plugin
 ```
 
 ## Usage
