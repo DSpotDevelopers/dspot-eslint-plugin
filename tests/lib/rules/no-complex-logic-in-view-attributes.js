@@ -147,6 +147,15 @@ ruleTester.run("no-complex-logic-in-view-attributes", rule, {
                 <Button onPress={[value1]}></Button>
             );
         }`
+    },
+    {
+      //Simple Template Literals are allowed
+      code: `
+        export default function SomeView() {
+            return (
+                <Button onPress={\`Hello\${value1}\`}></Button>
+            );
+        }`
     }
   ],
 
@@ -243,6 +252,16 @@ ruleTester.run("no-complex-logic-in-view-attributes", rule, {
             );
         }`,
       errors: [{ message: "Complex Array Expression is not permitted in view attributes"}],
+    },
+    {
+      //Complex template literals are not allowed in attributes
+      code: `
+        export default function SomeView() {
+            return (
+                <Button onPress={\`Hello \${value1 + value2}\`}></Button>
+            );
+        }`,
+      errors: [{ message: "Complex Template Literal is not permitted in view attributes"}],
     }
   ],
 });
