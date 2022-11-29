@@ -10,7 +10,17 @@ Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+export default function SomeView() {
+  function someMethod() {}
+
+  const someMethod = () => {}
+  
+  let someMethod2 = function() {}
+  
+  return (
+    <Button disabled={value1}></Button>
+  );
+}
 
 ```
 
@@ -18,7 +28,11 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+export default function SomeView() {
+  return (
+    <Button disabled={value1}></Button>
+  );
+}
 
 ```
 

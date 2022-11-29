@@ -44,6 +44,11 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-* Fill in provided rules here
-
-
+| Name                                                                                           | Description                                                                                           |
+|:-----------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|
+| [no-business-in-controller](docs/rules/no-business-in-controller.md)                           | disallow usage of business logic in Controllers (NestJS)                                              |
+| [no-complex-logic-in-view-attributes](docs/rules/no-complex-logic-in-view-attributes.md)       | disallow using complex expressions in attributes of elements inside Functional Components for "Views" |
+| [no-method-declaration-in-view](docs/rules/no-method-declaration-in-view.md)                   | disallow declaring functions within Functional Components for "Views"                                 |
+| [no-prop-object-from-custom-hook-spread](docs/rules/no-prop-object-from-custom-hook-spread.md) | disallow to use Spread for Prop objects from custom hooks (ie. View Models)                           |
+| [no-react-hooks-in-view](docs/rules/no-react-hooks-in-view.md)                                 | disallow to use React Hooks in Functional Components for "Views"                                      |
+| [require-props-object](docs/rules/require-props-object.md)                                     | disallow to use multiple properties when assigning to a single Element                                |

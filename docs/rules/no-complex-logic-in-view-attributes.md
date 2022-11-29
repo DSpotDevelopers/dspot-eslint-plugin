@@ -10,7 +10,27 @@ Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+export default function SomeView() {
+  return (
+    <>
+      <Button {...value()}></Button>
+      <Button disabled={value1 && value2}></Button>
+      <Button disabled={!(value1 && value2)}></Button>
+      <Button disabled={condition? value1() : value2}></Button>
+      <Button disabled={someMethod(value1, value2)}></Button>
+      
+      <Button someAttribute={{ property1: true, complexProperty: someFunction() }}></Button>
+      <Button onPress={value1?.property()}></Button>
+      <Button onPress={[value1, value2(), value3 + value4]}></Button>
+      <Button onPress={`Hello ${value1 + value2}`}></Button>
+      
+      <Button onPress={() => {
+        console.log('Hello');
+        console.log('World');
+      }}></Button>
+    </>
+  );
+}
 
 ```
 
@@ -18,7 +38,27 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+export default function SomeView() {
+  return (
+    <>
+      <Button disabled={value1}></Button>
+      <Button disabled={!value1}></Button>
+      <Button disabled={!!value1}></Button>
+      <Button {...value}></Button>
+      <Button {...value.property}></Button>
+      <Button onPress={value1?.property}></Button>
+      <Button onPress={[value1]}></Button>
+      
+      <Button onPress={`Hello${value1}`}></Button>
+      <Button disabled={condition? value1 : value2}></Button>
+      <Button style={{ display: 'flex', width: 'auto', height: -8, justifyContent: 'center' }}></Button>
+      <Button onPress={() => console.log('Hello')}></Button>
+      
+      //Exception when using classNames
+      <div className={classNames(styles.name, condition && styles.disabled)}>Some Text</div>
+    </>
+  );
+}
 
 ```
 

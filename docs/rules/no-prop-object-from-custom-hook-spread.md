@@ -10,7 +10,15 @@ Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+export default function SomeView() {
+  const {buttonProps} = useSomeView();
+  return (
+    <div>
+      <Button {...buttonProps}></Button>
+      <Button {...buttonProps.property}></Button>
+    </div>
+  );
+}
 
 ```
 
@@ -18,7 +26,20 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+export default function SomeView() {
+  const {buttonProps} = useSomeView();
+  return (
+    <div>
+      <Button
+        text={buttonProps.text}
+        disabled={buttonProps.disabled}>
+      </Button>
+
+      //Validation field is an exception
+      <Button {...buttonProps.validation}>
+    </div>
+  );
+}
 
 ```
 

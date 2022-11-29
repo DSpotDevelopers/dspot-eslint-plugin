@@ -13,7 +13,7 @@ class SomeController {
     constructor(private readonly someService: SomeService) {}
 
     async someMethod() {
-      this.someService.someMethod(),
+      this.someService.someMethod1(),
       this.someService.someMethod2()
     }
 }
