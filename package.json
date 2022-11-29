@@ -1,6 +1,6 @@
 {
   "name": "@dspot/eslint-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Enforces project practices",
   "keywords": [
     "eslint",
@@ -15,6 +15,7 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
+    "@typescript-eslint/utils": "^5.45.0",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {

@@ -28,20 +28,20 @@ const ruleTester = new ESLintUtils.RuleTester({
 ruleTester.run("no-complex-logic-in-view-attributes", rule, {
   valid: [
     {
-      //Simple Conditional expression are allowed in attributes
-      code: `
-          export default function SomeView() {
-              return (
-                  <Button disabled={condition? value1 : value2}></Button>
-              );
-          }`,
-    },
-    {
       //Simple Identifier are allowed in attributes
       code: `
           export default function SomeView() {
               return (
                   <Button disabled={value1}></Button>
+              );
+          }`,
+    },
+    {
+      //Simple Conditional expression are allowed in attributes
+      code: `
+          export default function SomeView() {
+              return (
+                  <Button disabled={condition? value1 : value2}></Button>
               );
           }`,
     },
