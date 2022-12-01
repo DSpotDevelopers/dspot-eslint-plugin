@@ -1,6 +1,6 @@
 {
   "name": "@dspot/eslint-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Enforces project practices",
   "keywords": [
     "eslint",
